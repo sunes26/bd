@@ -1,0 +1,59 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body,
+html {
+    height: 100%;
+    width: 100%;
+}
+
+body {
+    overflow-x: hidden;
+}
+
+section {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+h1 {
+    font-size: 2rem;
+}
+@media screen and (max-width: 768px) {
+    h1 {
+        font-size: 1.5rem;
+    }
+}
+
+
+img{
+    width: 50vw;
+    min-width: 300px;
+    height: auto;
+}
+
+
+@keyframes blink {
+    0% {background-color: red;}
+    50% {background-color: yellow;}
+   }
+
+   /* for Chrome, Safari */
+   @-webkit-keyframes blink {
+    0% {background-color: red;}
+    50% {background-color: yellow;}
+   }
+
+   /* blink CSS 브라우저 별로 각각 애니메이션을 지정해 주어야 동작한다. */
+   .blinkcss {
+    font-weight:bold;
+    animation: blink 1s step-end infinite;
+    -webkit-animation: blink 1s step-end infinite;
+   }

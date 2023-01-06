@@ -1,0 +1,84 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    overflow: hidden;
+}
+
+section {
+    width: 100vw;
+    height: 100vh;
+    background: indianred;
+    position: relative;
+    perspective: 600px;
+    /* 원근감 느낌을 줄 수 있음*/
+}
+
+.card {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    height: 400px;
+    width: 260px;
+    transition: all 1s;
+    transform-style: preserve-3d;
+    animation: rotate_image 6s linear infinite;
+    /*3차원 공간이 만들어져야 호버했을 떄 뒤의 이미지를 보이게 할 수 있다*/
+}
+
+.card:hover {
+
+    /*호버했을 떄 카드 자체를 돌려준다.*/
+}
+
+.card>div {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    position: absolute;
+    left: 0;
+    top: 0;
+    backface-visibility: hidden;
+    /*뒤집혔을떄의 각자의 기존 뒷면이 안보이도록 처리*/
+}
+
+.card .front {
+    background: beige;
+    z-index: 9999;
+}
+
+.card .back {
+    background: orange;
+    transform: rotateY(180deg);
+    /* 기본 셋팅으로 돌려놔야 한다.*/
+}
+
+img {
+    width: 100%;
+    height: 100%;
+}
+
+@keyframes rotate_image {
+    100% {
+        transform: translate(-50%, -50%) rotateY(360deg);
+    }
+}
+
+
+h1{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+
+    width: 230px;
+    height: 50px;
+    background: yellow;
+    border-radius: 20px;
+    position: absolute;
+
+}
